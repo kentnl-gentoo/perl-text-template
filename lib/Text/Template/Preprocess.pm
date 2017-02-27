@@ -1,6 +1,6 @@
 
 package Text::Template::Preprocess;
-
+$Text::Template::Preprocess::VERSION = '1.47';
 # ABSTRACT: Expand template text with embedded Perl
 
 use Text::Template;
@@ -30,6 +30,16 @@ sub preprocessor {
 1;
 
 __END__
+
+=pod
+
+=head1 NAME
+
+Text::Template::Preprocess - Expand template text with embedded Perl
+
+=head1 VERSION
+
+version 1.47
 
 =head1 SYNOPSIS
 
@@ -73,7 +83,6 @@ C<Text::Template>.
 One possible purpose:  If your files contain a lot of JavaScript, like
 this:
 
-
         Plain text here...
         { perl code }
         <script language=JavaScript>
@@ -93,11 +102,19 @@ JavaScript program with executable Perl code.  One strategy:
 
 Then use C<PREPROCESSOR =E<gt> \&quote_scripts>.  This will transform 
 
-
-
 =head1 SEE ALSO
 
 L<Text::Template>
+
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/mschout/perl-text-template>
+and may be cloned from L<git://github.com/mschout/perl-text-template.git>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to bug-text-template@rt.cpan.org or through the web interface at:
+ http://rt.cpan.org/Public/Dist/Display.html?Name=Text-Template
 
 =head1 AUTHOR
 
@@ -112,3 +129,11 @@ C<mjd-perl-template-request@plover.com> to join.
 
 For updates, visit C<http://www.plover.com/~mjd/perl/Template/>.
 
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Mark Jason Dominus <mjd@cpan.org>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

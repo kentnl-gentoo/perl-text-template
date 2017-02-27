@@ -10,7 +10,7 @@
 #
 
 package Text::Template;
-
+$Text::Template::VERSION = '1.47';
 # ABSTRACT: Expand template text with embedded Perl
 
 require 5.004;
@@ -482,6 +482,16 @@ sub TTerror { $ERROR }
 
 __END__
 
+=pod
+
+=head1 NAME
+
+Text::Template - Expand template text with embedded Perl
+
+=head1 VERSION
+
+version 1.47
+
 =head1 SYNOPSIS
 
  use Text::Template;
@@ -575,7 +585,6 @@ file C<formletter.tmpl>:
 
 			Mark "Vizopteryx" Dominus
 
-
 The result of filling in this template is a string, which might look
 something like this:
 
@@ -613,7 +622,6 @@ template into the example result, and prints it out:
 
 	if (defined $result) { print $result }
 	else { die "Couldn't fill in template: $Text::Template::ERROR" }
-
 
 =head2 Philosophy
 
@@ -799,7 +807,6 @@ end-of-file, and that text is the template:
 	new Text::Template ( TYPE => 'FILEHANDLE', 
                              SOURCE => \*STDIN  );
 
-
 If you omit the C<TYPE> attribute, it's taken to be C<FILE>.
 C<SOURCE> is required.  If you omit it, the program will abort.
 
@@ -939,7 +946,6 @@ Here's an example of using C<PACKAGE>:
 
 We want to pass in an array which will be assigned to the array
 C<@items>.  Here's how to do that:
-
 
 	@items = ('ivory', 'apes', 'peacocks', );
 	$template->fill_in();
@@ -1376,7 +1382,6 @@ package, and use the C<PACKAGE> option to C<fill_in>:
 
 	$Q::recipient = $recipient;
 	my $text = fill_in_file('formletter.tmpl', PACKAGE => 'Q');
-	
 
 or pass the names and values in a hash with the C<HASH> option:
 
@@ -1642,7 +1647,6 @@ and it'll come out as
 
 which is what you want.
 
-
 =head2 Shut Up!
 
 People sometimes try to put an initialization section at the top of
@@ -1730,7 +1734,6 @@ they should be taken literally.  The result in the output looks like this:
 
 	{ foo }
 
-
 This is a syntax error:
 
 	{ "foo}" }
@@ -1814,19 +1817,6 @@ method.  It is passed a list of pairs with these entries:
   out    - a ref to a string to which to append, to use if handle is not given
   text   - the text that will be appended
   type   - where the text came from: TEXT for literal text, PROG for code
-
-=head1 AUTHOR
-
-Mark Jason Dominus, Plover Systems
-
-Please send questions and other remarks about this software to
-C<mjd-perl-template+@plover.com>
-
-You can join a very low-volume (E<lt>10 messages per year) mailing
-list for announcements about this package.  Send an empty note to
-C<mjd-perl-template-request@plover.com> to join.
-
-For updates, visit C<http://www.plover.com/~mjd/perl/Template/>.
 
 =head1 SUPPORT
 
@@ -1942,5 +1932,35 @@ The C<$OUT> variable has a special meaning in templates, so you cannot
 use it as if it were a regular variable.
 
 There are not quite enough tests in the test suite.
+
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/mschout/perl-text-template>
+and may be cloned from L<git://github.com/mschout/perl-text-template.git>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to bug-text-template@rt.cpan.org or through the web interface at:
+ http://rt.cpan.org/Public/Dist/Display.html?Name=Text-Template
+
+=head1 AUTHOR
+
+Mark Jason Dominus, Plover Systems
+
+Please send questions and other remarks about this software to
+C<mjd-perl-template+@plover.com>
+
+You can join a very low-volume (E<lt>10 messages per year) mailing
+list for announcements about this package.  Send an empty note to
+C<mjd-perl-template-request@plover.com> to join.
+
+For updates, visit C<http://www.plover.com/~mjd/perl/Template/>.
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Mark Jason Dominus <mjd@cpan.org>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
