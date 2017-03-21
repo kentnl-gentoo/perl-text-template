@@ -10,8 +10,6 @@ README
 SIGNATURE
 lib/Text/Template.pm
 lib/Text/Template/Preprocess.pm
-t/author-pod-syntax.t
-t/author-signature.t
 t/basic.t
 t/broken.t
 t/delimiters.t
